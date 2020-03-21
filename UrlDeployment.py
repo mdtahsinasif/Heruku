@@ -180,5 +180,5 @@ cleanHeadlines_request = []
 MODEL_FILE = 'log_model-v1.pkl'
 if __name__ == '__main__':
    # os.chdir(MODEL_DIR)
-    log_estimator = joblib.load(MODEL_FILE)
+    global log_estimator = joblib.load(MODEL_FILE)
     app.run(debug=True)
