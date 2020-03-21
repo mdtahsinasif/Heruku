@@ -178,8 +178,8 @@ def predict():
 cleanHeadlines_request = []
 
 MODEL_FILE = 'log_model-v1.pkl'
+global log_estimator
 if __name__ == '__main__':
    # os.chdir(MODEL_DIR)
-    global log_estimator
     log_estimator = joblib.load(MODEL_FILE)
     app.run(debug=True)
