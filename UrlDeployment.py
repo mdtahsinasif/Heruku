@@ -176,14 +176,9 @@ def predict():
 
 
 cleanHeadlines_request = []
-#MODEL_DIR = 'C:/Users/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/URLDetection/'
-#C:\Users\tahsin.asif\OneDrive - CYFIRMA INDIA PRIVATE LIMITED\AI\URLDetection
-# MODEL_FILE = 'log_model-v1.pkl'
-#MODEL_FILE = 'final_estimator-v1.pkl'
-#MODEL_FILE = pickle.load(open('C:/Users/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/URLDetection/log_model-v1.pkl','rb'))
-#MODEL_FILE = 'C:/Users/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/URLDetection/log_model-v1.pkl'
+
 MODEL_FILE = 'log_model-v1.pkl'
 if __name__ == '__main__':
    # os.chdir(MODEL_DIR)
     log_estimator = joblib.load(MODEL_FILE)
-    app.run(port=8086,debug=True)
+    app.run(debug=True)
