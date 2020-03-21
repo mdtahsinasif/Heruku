@@ -29,7 +29,7 @@ json_obj = ''
 obj = ''
 
 app = Flask(__name__,template_folder='template')
-global log_estimator
+
 
 @app.route('/')
 def home():
@@ -38,6 +38,7 @@ def home():
 
 @app.route('/predict', methods=['POST','GET'])
 def predict():
+    global log_estimator
     json_ =request.args.get('url')
     print('json:', json_)
     # print('json_g---->',json_g)
