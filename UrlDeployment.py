@@ -29,6 +29,7 @@ json_obj = ''
 obj = ''
 
 app = Flask(__name__,template_folder='template')
+log_estimator = joblib.load(MODEL_FILE)
 
 
 @app.route('/')
@@ -38,7 +39,6 @@ def home():
 
 @app.route('/predict', methods=['POST','GET'])
 def predict():
-    global log_estimator
     json_ =request.args.get('url')
     print('json:', json_)
     # print('json_g---->',json_g)
@@ -183,5 +183,4 @@ MODEL_FILE = 'log_model-v1.pkl'
 
 if __name__ == '__main__':
    # os.chdir(MODEL_DIR)
-    log_estimator = joblib.load(MODEL_FILE)
     app.run(debug=True)
