@@ -35,7 +35,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST','GET'])
 def predict():
     json_ =request.args.get('url')
     print('json:', json_)
