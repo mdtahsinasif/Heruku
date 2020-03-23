@@ -173,8 +173,12 @@ def predict():
     print('query_df_array::----->', x)
     prediction = log_estimator.predict(x)
     print('Predicted Value;--->', prediction)
+    if(prediction == [0]):
+        result = 'Not Malicious'
+    else:
+        result = 'Malicious'
     output = pd.Series(prediction)
-    return render_template('index.html', prediction_text='Url Type is {}'.format(prediction))
+    return render_template('index.html', prediction_text='Url Type is {}'.format(result))
  #   return jsonify(pd.Series(prediction).to_json(orient='values'))
 
 
